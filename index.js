@@ -1,7 +1,10 @@
-export default function createElement(tag = 'DIV', attributes = {}, children = []) {
-    const element = document.createElement(tag)
+function createElement(tag = 'DIV', attributes = {}, children = []) {
+    const element = tag
+        ? document.createElement(tag)
+        : document.createDocumentFragment()
 
-    Object.entries(attributes).forEach(([key, value]) => {
+    if (!attributes || typeof attributes !== 'object') attributes = {}
+    if (tag) Object.entries(attributes).forEach(([key, value]) => {
         switch (key) {
             case 'class':
                 element.className = String(value)
@@ -18,6 +21,10 @@ export default function createElement(tag = 'DIV', attributes = {}, children = [
                 }, [])
                 element.classList.add(...value)
                 break
+            case 'style':
+                if (typeof value === 'object') Object.assign(element.style, value)
+                else element.style = value
+                break
             case 'data':
                 Object.assign(element.dataset, value)
                 break
@@ -32,9 +39,27 @@ export default function createElement(tag = 'DIV', attributes = {}, children = [
         .map(child => child instanceof Function ? child(element, tag, attributes, children) : child)
         .filter(child => child != null && child !== false)
         .forEach(child => {
-            if (typeof child != 'object') element.insertAdjacentText('beforeend', child)
-            else element.appendChild(child)
+            if (child == null) return;
+            if (typeof child != 'object') child = document.createTextNode(child)
+            element.appendChild(child)
         })
 
+    if (!tag) {
+        Object.defineProperty(element, 'innerHTML', {
+            get: () => Array.from(element.childNodes, item => item.outerHTML || item.textContent).join('')
+        })
+    }
+
     return element
+}
+
+function createFragment(children = []) {
+    return createElement(null, null, children)
+}
+
+export {
+    createElement as default,
+    createElement as tag,
+    createFragment,
+    createFragment as fragment
 }
