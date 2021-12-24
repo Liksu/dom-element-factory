@@ -24,3 +24,9 @@ document.appendChild(dom)
  * </div>
 */
 ```
+
+### Installation
+
+```shell
+npm install dom-element-factory
+```
