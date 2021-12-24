@@ -2,14 +2,32 @@
  * @param {String} [tagName='DIV']
  * @param {Object} [attributes={}]
  * @param {Array} [children=[]]
+ * @param {Array} [tail]
  * @returns {HTMLElement|DocumentFragment}
  */
-export function createElement(tagName = 'DIV', attributes = {}, children = []) {
+export function createElement(tagName = 'DIV', attributes = {}, children = [], ...tail) {
     const element = tagName
         ? document.createElement(tagName)
         : document.createDocumentFragment()
 
-    if (!attributes || typeof attributes !== 'object') attributes = {}
+    children = [
+        ...(children instanceof Array ? children : [children]),
+        ...tail
+    ].filter(item => item === 0 || item === '' || !!item)
+
+    if (!attributes) attributes = {}
+    if (attributes instanceof Function) attributes = attributes(element, tagName, attributes, children)
+    if (String(attributes) === attributes) attributes = {'class': attributes}
+    if (attributes instanceof Array) {
+        if (children.length) attributes = {classList: attributes}
+        else children = attributes
+        attributes = {}
+    }
+    if (attributes instanceof Element || attributes instanceof DocumentFragment) {
+        children.unshift(attributes)
+        attributes = {}
+    }
+
     if (tagName) Object.entries(attributes).forEach(([key, value]) => {
         switch (key) {
             case '_':
@@ -41,12 +59,10 @@ export function createElement(tagName = 'DIV', attributes = {}, children = []) {
         }
     })
 
-    if (!(children instanceof Array)) children = [children]
     children
         .map(child => child instanceof Function ? child(element, tagName, attributes, children) : child)
         .filter(child => child != null && child !== false)
         .forEach(child => {
-            if (child == null) return;
             if (typeof child != 'object') child = document.createTextNode(child)
             element.appendChild(child)
         })

@@ -1,4 +1,4 @@
-import createElement, {a, b, createFragment, div} from "./index.js"
+import createElement, {a, b, br, createFragment, div, span, text} from "./index.js"
 
 function testCase(name, dom, expectedHTML) {
     test(name, () => expect(dom.outerHTML || dom.innerHTML).toBe(expectedHTML))
@@ -82,6 +82,19 @@ testCase('Tags',
         ])
     ),
     '<div class="foo"><div><a target="_blank">Click me</a><b style="background-color: silver;">Bold text</b></div></div>'
+)
+
+testCase('All arguments contains children',
+    div(
+        span(null, 'first'),
+        undefined,
+        null,
+        br(),
+        text('second'),
+        br(),
+        span(text('third')),
+    ),
+    '<div><span>first</span><br>second<br><span>third</span></div>'
 )
 
 testCase('Deep fragment',

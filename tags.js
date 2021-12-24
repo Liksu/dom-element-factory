@@ -1,195 +1,195 @@
 import {createElement} from "./element.js";
 
-export function a(attributes, children) {
-    return createElement('A', attributes, children)
+export function a(...args) {
+    return createElement('A', ...args)
 }
 
-export function abbr(attributes, children) {
-    return createElement('ABBR', attributes, children)
+export function abbr(...args) {
+    return createElement('ABBR', ...args)
 }
 
-export function address(attributes, children) {
-    return createElement('ADDRESS', attributes, children)
+export function address(...args) {
+    return createElement('ADDRESS', ...args)
 }
 
-export function area(attributes, children) {
-    return createElement('AREA', attributes, children)
+export function area(attributes) {
+    return createElement('AREA', attributes)
 }
 
-export function article(attributes, children) {
-    return createElement('ARTICLE', attributes, children)
+export function article(...args) {
+    return createElement('ARTICLE', ...args)
 }
 
-export function aside(attributes, children) {
-    return createElement('ASIDE', attributes, children)
+export function aside(...args) {
+    return createElement('ASIDE', ...args)
 }
 
-export function audio(attributes, children) {
-    return createElement('AUDIO', attributes, children)
+export function audio(...args) {
+    return createElement('AUDIO', ...args)
 }
 
-export function b(attributes, children) {
-    return createElement('B', attributes, children)
+export function b(...args) {
+    return createElement('B', ...args)
 }
 
 export function base(attributes) {
     return createElement('BASE', attributes)
 }
 
-export function bdo(attributes, children) {
-    return createElement('BDO', attributes, children)
+export function bdo(...args) {
+    return createElement('BDO', ...args)
 }
 
-export function blockquote(attributes, children) {
-    return createElement('BLOCKQUOTE', attributes, children)
+export function blockquote(...args) {
+    return createElement('BLOCKQUOTE', ...args)
 }
 
-export function body(attributes, children) {
-    return createElement('BODY', attributes, children)
+export function body(...args) {
+    return createElement('BODY', ...args)
 }
 
 export function br() {
     return createElement('BR')
 }
 
-export function button(attributes, children) {
-    return createElement('BUTTON', attributes, children)
+export function button(...args) {
+    return createElement('BUTTON', ...args)
 }
 
-export function canvas(attributes) {
-    return createElement('CANVAS', attributes)
+export function canvas(...args) {
+    return createElement('CANVAS', ...args)
 }
 
-export function caption(attributes, children) {
-    return createElement('CAPTION', attributes, children)
+export function caption(...args) {
+    return createElement('CAPTION', ...args)
 }
 
-export function cite(attributes, children) {
-    return createElement('CITE', attributes, children)
+export function cite(...args) {
+    return createElement('CITE', ...args)
 }
 
-export function code(attributes, children) {
-    return createElement('CODE', attributes, children)
+export function code(...args) {
+    return createElement('CODE', ...args)
 }
 
-export function col(attributes, children) {
-    return createElement('COL', attributes, children)
+export function col(attributes) {
+    return createElement('COL', attributes)
 }
 
-export function colgroup(attributes, children) {
-    return createElement('COLGROUP', attributes, children)
+export function colgroup(...args) {
+    return createElement('COLGROUP', ...args)
 }
 
-export function command(attributes, children) {
-    return createElement('COMMAND', attributes, children)
+export function command(...args) {
+    return createElement('COMMAND', ...args)
 }
 
-export function datalist(attributes, children) {
-    return createElement('DATALIST', attributes, children)
+export function datalist(...args) {
+    return createElement('DATALIST', ...args)
 }
 
-export function dd(attributes, children) {
-    return createElement('DD', attributes, children)
+export function dd(...args) {
+    return createElement('DD', ...args)
 }
 
-export function del(attributes, children) {
-    return createElement('DEL', attributes, children)
+export function del(...args) {
+    return createElement('DEL', ...args)
 }
 
-export function details(attributes, children) {
-    return createElement('DETAILS', attributes, children)
+export function details(...args) {
+    return createElement('DETAILS', ...args)
 }
 
-export function dfn(attributes, children) {
-    return createElement('DFN', attributes, children)
+export function dfn(...args) {
+    return createElement('DFN', ...args)
 }
 
-export function div(attributes, children) {
-    return createElement('DIV', attributes, children)
+export function div(...args) {
+    return createElement('DIV', ...args)
 }
 
-export function dl(attributes, children) {
-    return createElement('DL', attributes, children)
+export function dl(...args) {
+    return createElement('DL', ...args)
 }
 
-export function dt(attributes, children) {
-    return createElement('DT', attributes, children)
+export function dt(...args) {
+    return createElement('DT', ...args)
 }
 
-export function em(attributes, children) {
-    return createElement('EM', attributes, children)
+export function em(...args) {
+    return createElement('EM', ...args)
 }
 
-export function embed(attributes, children) {
-    return createElement('EMBED', attributes, children)
+export function embed(attributes) {
+    return createElement('EMBED', attributes)
 }
 
-export function fieldset(attributes, children) {
-    return createElement('FIELDSET', attributes, children)
+export function fieldset(...args) {
+    return createElement('FIELDSET', ...args)
 }
 
-export function figcaption(attributes, children) {
-    return createElement('FIGCAPTION', attributes, children)
+export function figcaption(...args) {
+    return createElement('FIGCAPTION', ...args)
 }
 
-export function figure(attributes, children) {
-    return createElement('FIGURE', attributes, children)
+export function figure(...args) {
+    return createElement('FIGURE', ...args)
 }
 
-export function footer(attributes, children) {
-    return createElement('FOOTER', attributes, children)
+export function footer(...args) {
+    return createElement('FOOTER', ...args)
 }
 
-export function form(attributes, children) {
-    return createElement('FORM', attributes, children)
+export function form(...args) {
+    return createElement('FORM', ...args)
 }
 
-export function h1(attributes, children) {
-    return createElement('H1', attributes, children)
+export function h1(...args) {
+    return createElement('H1', ...args)
 }
 
-export function h2(attributes, children) {
-    return createElement('H2', attributes, children)
+export function h2(...args) {
+    return createElement('H2', ...args)
 }
 
-export function h3(attributes, children) {
-    return createElement('H3', attributes, children)
+export function h3(...args) {
+    return createElement('H3', ...args)
 }
 
-export function h4(attributes, children) {
-    return createElement('H4', attributes, children)
+export function h4(...args) {
+    return createElement('H4', ...args)
 }
 
-export function h5(attributes, children) {
-    return createElement('H5', attributes, children)
+export function h5(...args) {
+    return createElement('H5', ...args)
 }
 
-export function h6(attributes, children) {
-    return createElement('H6', attributes, children)
+export function h6(...args) {
+    return createElement('H6', ...args)
 }
 
-export function head(attributes, children) {
-    return createElement('HEAD', attributes, children)
+export function head(...args) {
+    return createElement('HEAD', ...args)
 }
 
-export function header(attributes, children) {
-    return createElement('HEADER', attributes, children)
+export function header(...args) {
+    return createElement('HEADER', ...args)
 }
 
 export function hr(attributes) {
     return createElement('HR', attributes)
 }
 
-export function html(attributes, children) {
-    return createElement('HTML', attributes, children)
+export function html(...args) {
+    return createElement('HTML', ...args)
 }
 
-export function i(attributes, children) {
-    return createElement('I', attributes, children)
+export function i(...args) {
+    return createElement('I', ...args)
 }
 
-export function iframe(attributes, children) {
-    return createElement('IFRAME', attributes, children)
+export function iframe(...args) {
+    return createElement('IFRAME', ...args)
 }
 
 export function img(attributes) {
@@ -200,218 +200,223 @@ export function input(attributes) {
     return createElement('INPUT', attributes)
 }
 
-export function ins(attributes, children) {
-    return createElement('INS', attributes, children)
+export function ins(...args) {
+    return createElement('INS', ...args)
 }
 
-export function kbd(attributes, children) {
-    return createElement('KBD', attributes, children)
+export function kbd(...args) {
+    return createElement('KBD', ...args)
 }
 
-export function label(attributes, children) {
-    return createElement('LABEL', attributes, children)
+export function label(...args) {
+    return createElement('LABEL', ...args)
 }
 
-export function legend(attributes, children) {
-    return createElement('LEGEND', attributes, children)
+export function legend(...args) {
+    return createElement('LEGEND', ...args)
 }
 
-export function li(attributes, children) {
-    return createElement('LI', attributes, children)
+export function li(...args) {
+    return createElement('LI', ...args)
 }
 
-export function link(attributes, children) {
-    return createElement('LINK', attributes, children)
+export function link(attributes) {
+    return createElement('LINK', attributes)
 }
 
-export function map(attributes, children) {
-    return createElement('MAP', attributes, children)
+export function map(...args) {
+    return createElement('MAP', ...args)
 }
 
-export function mark(attributes, children) {
-    return createElement('MARK', attributes, children)
+export function mark(...args) {
+    return createElement('MARK', ...args)
 }
 
-export function menu(attributes, children) {
-    return createElement('MENU', attributes, children)
+export function menu(...args) {
+    return createElement('MENU', ...args)
 }
 
-export function meta(attributes, children) {
-    return createElement('META', attributes, children)
+export function meta(attributes) {
+    return createElement('META', attributes)
 }
 
-export function meter(attributes, children) {
-    return createElement('METER', attributes, children)
+export function meter(...args) {
+    return createElement('METER', ...args)
 }
 
-export function nav(attributes, children) {
-    return createElement('NAV', attributes, children)
+export function nav(...args) {
+    return createElement('NAV', ...args)
 }
 
-export function noscript(attributes, children) {
-    return createElement('NOSCRIPT', attributes, children)
+export function noscript(...args) {
+    return createElement('NOSCRIPT', ...args)
 }
 
-export function object(attributes, children) {
-    return createElement('OBJECT', attributes, children)
+export function object(...args) {
+    return createElement('OBJECT', ...args)
 }
 
-export function ol(attributes, children) {
-    return createElement('OL', attributes, children)
+export function ol(...args) {
+    return createElement('OL', ...args)
 }
 
-export function optgroup(attributes, children) {
-    return createElement('OPTGROUP', attributes, children)
+export function optgroup(...args) {
+    return createElement('OPTGROUP', ...args)
 }
 
-export function option(attributes, children) {
-    return createElement('OPTION', attributes, children)
+export function option(...args) {
+    return createElement('OPTION', ...args)
 }
 
-export function output(attributes, children) {
-    return createElement('OUTPUT', attributes, children)
+export function output(...args) {
+    return createElement('OUTPUT', ...args)
 }
 
-export function p(attributes, children) {
-    return createElement('P', attributes, children)
+export function p(...args) {
+    return createElement('P', ...args)
 }
 
-export function param(attributes, children) {
-    return createElement('PARAM', attributes, children)
+export function param(attributes) {
+    return createElement('PARAM', attributes)
 }
 
-export function pre(attributes, children) {
-    return createElement('PRE', attributes, children)
+export function pre(...args) {
+    return createElement('PRE', ...args)
 }
 
-export function progress(attributes, children) {
-    return createElement('PROGRESS', attributes, children)
+export function progress(...args) {
+    return createElement('PROGRESS', ...args)
 }
 
-export function q(attributes, children) {
-    return createElement('Q', attributes, children)
+export function q(...args) {
+    return createElement('Q', ...args)
 }
 
-export function rp(attributes, children) {
-    return createElement('RP', attributes, children)
+export function rp(...args) {
+    return createElement('RP', ...args)
 }
 
-export function rt(attributes, children) {
-    return createElement('RT', attributes, children)
+export function rt(...args) {
+    return createElement('RT', ...args)
 }
 
-export function ruby(attributes, children) {
-    return createElement('RUBY', attributes, children)
+export function ruby(...args) {
+    return createElement('RUBY', ...args)
 }
 
-export function s(attributes, children) {
-    return createElement('S', attributes, children)
+export function s(...args) {
+    return createElement('S', ...args)
 }
 
-export function samp(attributes, children) {
-    return createElement('SAMP', attributes, children)
+export function samp(...args) {
+    return createElement('SAMP', ...args)
 }
 
-export function script(attributes, children) {
-    return createElement('SCRIPT', attributes, children)
+export function script(...args) {
+    return createElement('SCRIPT', ...args)
 }
 
-export function section(attributes, children) {
-    return createElement('SECTION', attributes, children)
+export function section(...args) {
+    return createElement('SECTION', ...args)
 }
 
-export function select(attributes, children) {
-    return createElement('SELECT', attributes, children)
+export function select(...args) {
+    return createElement('SELECT', ...args)
 }
 
-export function small(attributes, children) {
-    return createElement('SMALL', attributes, children)
+export function small(...args) {
+    return createElement('SMALL', ...args)
 }
 
-export function source(attributes, children) {
-    return createElement('SOURCE', attributes, children)
+export function source(attributes) {
+    return createElement('SOURCE', attributes)
 }
 
-export function span(attributes, children) {
-    return createElement('SPAN', attributes, children)
+export function span(...args) {
+    return createElement('SPAN', ...args)
 }
 
-export function strong(attributes, children) {
-    return createElement('STRONG', attributes, children)
+export function strong(...args) {
+    return createElement('STRONG', ...args)
 }
 
-export function style(attributes, children) {
-    return createElement('STYLE', attributes, children)
+export function style(...args) {
+    return createElement('STYLE', ...args)
 }
 
-export function sub(attributes, children) {
-    return createElement('SUB', attributes, children)
+export function sub(...args) {
+    return createElement('SUB', ...args)
 }
 
-export function sup(attributes, children) {
-    return createElement('SUP', attributes, children)
+export function sup(...args) {
+    return createElement('SUP', ...args)
 }
 
-export function table(attributes, children) {
-    return createElement('TABLE', attributes, children)
+export function table(...args) {
+    return createElement('TABLE', ...args)
 }
 
-export function tbody(attributes, children) {
-    return createElement('TBODY', attributes, children)
+export function tbody(...args) {
+    return createElement('TBODY', ...args)
 }
 
-export function td(attributes, children) {
-    return createElement('TD', attributes, children)
+export function td(...args) {
+    return createElement('TD', ...args)
 }
 
-export function textarea(attributes, children) {
-    return createElement('TEXTAREA', attributes, children)
+export function textarea(...args) {
+    return createElement('TEXTAREA', ...args)
 }
 
-export function tfoot(attributes, children) {
-    return createElement('TFOOT', attributes, children)
+export function tfoot(...args) {
+    return createElement('TFOOT', ...args)
 }
 
-export function th(attributes, children) {
-    return createElement('TH', attributes, children)
+export function th(...args) {
+    return createElement('TH', ...args)
 }
 
-export function thead(attributes, children) {
-    return createElement('THEAD', attributes, children)
+export function thead(...args) {
+    return createElement('THEAD', ...args)
 }
 
-export function time(attributes, children) {
-    return createElement('TIME', attributes, children)
+export function time(...args) {
+    return createElement('TIME', ...args)
 }
 
-export function title(attributes, children) {
-    return createElement('TITLE', attributes, children)
+export function title(...args) {
+    return createElement('TITLE', ...args)
 }
 
-export function tr(attributes, children) {
-    return createElement('TR', attributes, children)
+export function tr(...args) {
+    return createElement('TR', ...args)
 }
 
-export function track(attributes, children) {
-    return createElement('TRACK', attributes, children)
+export function track(attributes) {
+    return createElement('TRACK', attributes)
 }
 
-export function u(attributes, children) {
-    return createElement('U', attributes, children)
+export function u(...args) {
+    return createElement('U', ...args)
 }
 
-export function ul(attributes, children) {
-    return createElement('UL', attributes, children)
+export function ul(...args) {
+    return createElement('UL', ...args)
 }
 
-export function variable(attributes, children) {
-    return createElement('VAR', attributes, children)
+export function variable(...args) {
+    return createElement('VAR', ...args)
 }
 
-export function video(attributes, children) {
-    return createElement('VIDEO', attributes, children)
+export function video(...args) {
+    return createElement('VIDEO', ...args)
 }
 
-export function wbr(attributes, children) {
-    return createElement('WBR', attributes, children)
+export function wbr(attributes) {
+    return createElement('WBR', attributes)
+}
+
+/* text fragment */
+export function text(textContent) {
+    return createElement('', null, textContent)
 }
