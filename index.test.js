@@ -1,4 +1,4 @@
-import createElement, {createFragment} from "./index.js"
+import createElement, {a, b, createFragment, div} from "./index.js"
 
 function testCase(name, dom, expectedHTML) {
     test(name, () => expect(dom.outerHTML || dom.innerHTML).toBe(expectedHTML))
@@ -44,9 +44,45 @@ testCase('Undefined tag name is not fragment',
     '<div id="test"></div>'
 )
 
+testCase('Event handlers',
+    createElement('div', {onclick: 'callback()'}),
+    '<div onclick="callback()"></div>'
+)
+
+test('Event handlers should works', () => {
+    window.callback = jest.fn()
+
+    const dom = createElement('div', {onclick: 'callback()'})
+    expect(dom.outerHTML).toBe('<div onclick="callback()"></div>')
+
+    dom.click()
+    expect(window.callback).toBeCalled()
+})
+
+test('Event Listeners', () => {
+    let flag = 0
+    const click = () => flag++
+
+    const dom = createElement('div', {click})
+    expect(dom.outerHTML).toBe('<div></div>')
+
+    dom.click()
+    expect(flag).toBe(1)
+})
+
 test('Fragment', () => {
     expect(createElement('').nodeType).toBe(11)
 })
+
+testCase('Tags',
+    div({classList: {foo: true, bar: false}},
+        div(null, [
+            a({target: '_blank'}, 'Click me'),
+            b({style: {backgroundColor: 'silver'}}, 'Bold text')
+        ])
+    ),
+    '<div class="foo"><div><a target="_blank">Click me</a><b style="background-color: silver;">Bold text</b></div></div>'
+)
 
 testCase('Deep fragment',
     createFragment([
