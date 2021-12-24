@@ -1,8 +1,3 @@
-if (typeof document === 'undefined') {
-    const { JSDOM } = await import('jsdom');
-    document = (new JSDOM(`<body></body>`)).window.document;
-}
-
 /**
  * @param {String} [tagName='DIV']
  * @param {Object} [attributes={}]
