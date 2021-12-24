@@ -1,6 +1,6 @@
 {
   "name": "dom-element-factory",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Lightweight tool that creates DOM elements",
   "main": "index.js",
   "type": "module",
@@ -36,5 +36,8 @@
     "transform": {
       "^.+\\.js$": "babel-jest"
     }
+  },
+  "dependencies": {
+    "jsdom": "^19.0.0"
   }
 }
