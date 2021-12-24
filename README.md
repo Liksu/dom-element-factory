@@ -195,6 +195,12 @@ If String or Element passed, they will be acted as single element of array of ch
 
 If element of array is Function, it will be called abd the result of it will be used as child.
 
+#### Additional notes
+
+If `attributes` passed as String, it will be considered as a className.
+
+If `attributes` passed as Element, it will be considered as a first child.
+
 ### Create Fragments
 
 You can create element with empty (but not `undefined`) tag name and receive DOM fragment.
@@ -234,3 +240,11 @@ All HTML5 tags shortcuts are prepared in the `tags.js` file.
 
 You can build the DOM using tag functions like `div()` instead of `createElement('div')`.
 These shortcuts were used in the examples above.
+
+There is one additional shortcut: `text(textContent)`. This function creates document fragment with text node inside it.
+You can use it like this:
+
+```javascript
+span(text('Inner text'))
+// <span>Inner text</span>
+```
