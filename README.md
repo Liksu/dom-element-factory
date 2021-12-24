@@ -144,7 +144,14 @@ There are some edge-cases:
 
 ##### class
 
-Set value string as class attribute
+Set value string as class attribute.
+
+Has shortcut `_` to use instead of key `'class'`.
+```javascript
+createElement('div', {'class': 'demo'})
+createElement('div', {_: 'demo'})
+// returns the same: <div class="demo"></div>
+```
 
 ##### classList
 

@@ -12,6 +12,7 @@ export function createElement(tagName = 'DIV', attributes = {}, children = []) {
     if (!attributes || typeof attributes !== 'object') attributes = {}
     if (tagName) Object.entries(attributes).forEach(([key, value]) => {
         switch (key) {
+            case '_':
             case 'class':
                 element.className = String(value)
                 break
