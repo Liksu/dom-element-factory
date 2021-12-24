@@ -1,10 +1,21 @@
-export function createElement(tag = 'DIV', attributes = {}, children = []) {
-    const element = tag
-        ? document.createElement(tag)
+if (typeof document === 'undefined') {
+    const { JSDOM } = await import('jsdom');
+    document = (new JSDOM(`<body></body>`)).window.document;
+}
+
+/**
+ * @param {String} [tagName='DIV']
+ * @param {Object} [attributes={}]
+ * @param {Array} [children=[]]
+ * @returns {HTMLElement|DocumentFragment}
+ */
+export function createElement(tagName = 'DIV', attributes = {}, children = []) {
+    const element = tagName
+        ? document.createElement(tagName)
         : document.createDocumentFragment()
 
     if (!attributes || typeof attributes !== 'object') attributes = {}
-    if (tag) Object.entries(attributes).forEach(([key, value]) => {
+    if (tagName) Object.entries(attributes).forEach(([key, value]) => {
         switch (key) {
             case 'class':
                 element.className = String(value)
@@ -12,7 +23,7 @@ export function createElement(tag = 'DIV', attributes = {}, children = []) {
             case 'classList':
                 if (!(value instanceof Array)) value = [value]
                 value = value.reduce((classes, item) => {
-                    if (item instanceof Function) item = item(element, tag, attributes, children)
+                    if (item instanceof Function) item = item(element, tagName, attributes, children)
                     if (item instanceof Array) return classes.concat(...item.filter(item => item === 0 || !!item))
                     return classes.concat(...(typeof item === 'object'
                             ? Object.keys(item).filter(key => item[key])
@@ -36,7 +47,7 @@ export function createElement(tag = 'DIV', attributes = {}, children = []) {
 
     if (!(children instanceof Array)) children = [children]
     children
-        .map(child => child instanceof Function ? child(element, tag, attributes, children) : child)
+        .map(child => child instanceof Function ? child(element, tagName, attributes, children) : child)
         .filter(child => child != null && child !== false)
         .forEach(child => {
             if (child == null) return;
@@ -44,7 +55,7 @@ export function createElement(tag = 'DIV', attributes = {}, children = []) {
             element.appendChild(child)
         })
 
-    if (!tag) {
+    if (!tagName) {
         Object.defineProperty(element, 'innerHTML', {
             get: () => Array.from(element.childNodes, item => item.outerHTML || item.textContent).join('')
         })

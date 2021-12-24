@@ -1,4 +1,4 @@
-import createElement from "./index.js";
+import {createElement} from "./element.js";
 
 export function a(attributes, children) {
     return createElement('A', attributes, children)
