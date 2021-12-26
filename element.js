@@ -76,6 +76,6 @@ export function createElement(tagName = 'DIV', attributes = {}, children = [], .
     return element
 }
 
-export function createFragment(children = []) {
-    return createElement(null, null, children)
+export function createFragment(children = [], ...tail) {
+    return createElement(null, null, children, ...tail)
 }
