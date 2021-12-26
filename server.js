@@ -1,6 +1,7 @@
 import {JSDOM} from "jsdom"
 if (typeof document === 'undefined') {
-    global.document = (new JSDOM(`<body></body>`)).window.document
+    const {document, Element, DocumentFragment} = (new JSDOM(`<body></body>`)).window
+    Object.assign(global, {document, Element, DocumentFragment})
 }
 
 export * from './index.js'
