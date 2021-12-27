@@ -7,6 +7,9 @@ import {component, useState, useNamedState} from "./reandr.js";
 // make all functions be available from console
 Object.assign(window, factory, {createElement})
 
+//TODO: add fragment as supported component root
+//TODO: fix select to show selected option
+
 /* *** */
 
 const codeSamples = {
