@@ -1,0 +1,11 @@
+{
+	"description": "SSR example",
+	"author": "Petro Borshchahivskyi",
+	"scripts": {
+		"test": "node ./server-test.js"
+	},
+	"type": "module",
+	"dependencies": {
+		"dom-element-factory": "^1.2.3"
+	}
+}
