@@ -8,7 +8,6 @@ import {component, useState, useNamedState} from "./reandr.js";
 Object.assign(window, factory, {createElement})
 
 //TODO: add fragment as supported component root
-//TODO: fix select to show selected option
 
 /* *** */
 
@@ -71,18 +70,28 @@ const REPL = component.bind('repl')((currentTab) => {
         codeSamples._selected = e.target.value
         setCode(codeSamples[codeSamples._selected])
     }
-    const selected = (...args) => console.warn(...args)
-
+    const getArgs = value => {
+        const args = {value}
+        if (codeSamples._selected === value) args.selected = 'selected'
+        return args
+    }
 
     return div('container-fluid', [
         div('row', [
+            p('mt-3', [
+                'You can edit your code here or use one of predefined samples from dropdown below. For example, try to add',
+                factory.code('mx-1', 'br(),'),
+                'between link and inner text.',
+            ]),
+            hr(),
+        ]),
+        div('row', [
             div('col-5', [
                 select({change: setPredefined, _: 'form-select form-select-sm col-3'}, [
-                    option({value: 'createElement'}, 'createElement Sample'),
-                    option({value: 'tags'}, 'Tags sample')
+                    option(getArgs('createElement'), 'createElement Sample'),
+                    option(getArgs('tags'), 'Tags sample')
                 ]),
             ]),
-            pre('col-1', [currentTab]),
             div('mb-2 col-md-6', [
                 button({_: 'btn btn-light', click}, 'Run ▶')
             ])
@@ -95,7 +104,17 @@ const REPL = component.bind('repl')((currentTab) => {
 })
 
 const Doc = component.bind('doc')((currentTab) => {
-    return div(pre([currentTab]), 'Docs')
+    const [md, setMd] = useState()
+    if (!md) {
+        fetch('https://unpkg.com/dom-element-factory/README.md')
+            .then(resp => resp.text())
+            .then(md => setMd(marked.parse(md) + '<hr><footer>2021 © Petro Borshchahivskyi</footer>'))
+    }
+
+    return div('container mt-3', [
+        style(null, 'pre {background-color: #f8f9fa; padding: 1rem} footer {text-align: center; font-size: 0.8rem; color: gray}'),
+        md ? innerHTML(md) : 'Loading...'
+    ])
 })
 
 const App = component.bind('app')(() => {
@@ -103,8 +122,6 @@ const App = component.bind('app')(() => {
 
     return div([
         Tabs(currentTab, changeTab),
-        'here can be some text',
-        hr(),
         currentTab === 'doc' && Doc(currentTab),
         currentTab === 'repl' && REPL(currentTab)
     ])

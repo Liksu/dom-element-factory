@@ -234,6 +234,22 @@ As tag name can be any falsie value except `undefined`.
 
 There are two shortcuts prepared to create fragments: `createFragment(children[])` and the same `fragment(children[])`
 
+### Setting the innerHTML
+
+It is possible to set the innerHTML of newly creating element with `innerHTML` helper function.
+
+This function just converting the html string into DOM elements via proxy fragment.
+
+```javascript
+createElement('div', null, innerHTML('<span>Here is html</span>'))
+/**
+ * Output:
+ * <div>
+ *     <span>Here is html</span>
+ * </div>
+ */
+```
+
 ### Tags
 
 All HTML5 tags shortcuts are prepared in the `tags.js` file.

@@ -79,3 +79,9 @@ export function createElement(tagName = 'DIV', attributes = {}, children = [], .
 export function createFragment(children = [], ...tail) {
     return createElement(null, null, children, ...tail)
 }
+
+export function innerHTML(html = '') {
+    const template = document.createElement('template')
+    template.innerHTML = html
+    return template.content
+}
