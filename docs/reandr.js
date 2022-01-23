@@ -2,6 +2,8 @@ const componentState = new Map()
 const domStorage = new Map()
 const namedState = {}
 
+//TODO: add fragment as supported component root
+
 window.state = {componentState, domStorage, namedState}
 const log = console.log.bind(console)
 

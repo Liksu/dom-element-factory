@@ -7,12 +7,10 @@ import {component, useState, useNamedState} from "./reandr.js";
 // make all functions be available from console
 Object.assign(window, factory, {createElement})
 
-//TODO: add fragment as supported component root
-
 /* *** */
 
 const codeSamples = {
-    _selected: 'createElement',
+    _selected: 'tags',
     tags: `fragment(
         a({href: 'google.com'}, 'Click me'),
         'Inner text',
@@ -44,18 +42,38 @@ const Tabs = component.bind('tabs')((currentTab, changeTab) => {
 })
 
 const Input = component.bind('input')((change, code) => {
+    const keyup = e => e.key === 'Enter' && e.ctrlKey && change(e)
+    const keydown = function(e) {
+        if (e.key !== 'Tab') return;
+
+         e.preventDefault()
+        const {selectionStart: start, selectionEnd: end, value} = this
+        this.value = value.substr(0, start) + '\t' + value.substr(end)
+        this.selectionStart = this.selectionEnd = start + 1
+    }
+
     return form('col-md-6',
         textarea({
             _: 'form-control',
             style: {height: '75vh'},
             change,
-            keyup: e => e.key === 'Enter' && e.ctrlKey && change(e)
+            keyup,
+            keydown,
         }, code)
     )
 })
 
 const Preview = component.bind('preview')((code) => {
-    const sampleDOM = eval(code)
+    let sampleDOM
+    try {
+        sampleDOM = eval(code)
+    } catch (error) {
+        const name = error.name.split(/(?=[A-Z])/).join(' ')
+        return div('card col-md-6 bg-danger bg-gradient bg-opacity-25 text-danger', [
+            h4([`${name}:`]),
+            error.message
+        ])
+    }
 
     return div('card col-md-6', [
         div('card-body', sampleDOM)
