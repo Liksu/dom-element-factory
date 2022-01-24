@@ -129,8 +129,20 @@ const Doc = component.bind('doc')((currentTab) => {
             .then(md => setMd(marked.parse(md) + '<hr><footer>2021 © Petro Borshchahivskyi</footer>'))
     }
 
+    const pageStyling = {
+        pre: {
+            backgroundColor: '#f8f9fa',
+            padding: '1rem'
+        },
+        footer: {
+            textAlign: 'center',
+            fontSize: '0.8rem',
+            color: 'gray'
+        }
+    }
+
     return div('container mt-3', [
-        style(null, 'pre {background-color: #f8f9fa; padding: 1rem} footer {text-align: center; font-size: 0.8rem; color: gray}'),
+        css(pageStyling),
         md ? innerHTML(md) : 'Loading...'
     ])
 })

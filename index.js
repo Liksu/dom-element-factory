@@ -4,6 +4,7 @@ export {
     createElement,
     createFragment,
     createFragment as fragment,
-    innerHTML
+    innerHTML,
+    css,
 } from './element.js'
 export * from './tags.js'

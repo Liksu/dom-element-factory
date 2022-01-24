@@ -80,6 +80,15 @@ export function createFragment(children = [], ...tail) {
     return createElement(null, null, children, ...tail)
 }
 
+export function css(styles = {}) {
+    const toDeclarations = ([key, value]) => key.replace(/([A-Z])/g, '-$1').toLowerCase() + ': ' + value
+    const stylesString = Object.entries(styles).map(([selector, declarationsObject]) => {
+        const declarations = Object.entries(declarationsObject).map(toDeclarations).join('; ')
+        return `${selector} {${declarations}}`
+    }).join('\n')
+    return createElement('STYLE', null, stylesString)
+}
+
 export function innerHTML(html = '') {
     const template = document.createElement('template')
     template.innerHTML = html

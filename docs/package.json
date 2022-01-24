@@ -6,6 +6,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"dom-element-factory": "^1.4.1"
+		"dom-element-factory": "^1.5.0"
 	}
 }

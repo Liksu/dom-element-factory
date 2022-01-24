@@ -250,6 +250,35 @@ createElement('div', null, innerHTML('<span>Here is html</span>'))
  */
 ```
 
+### Add styles to the page
+
+It is quite easy to add a styling to the page using the `style` tag:
+
+```javascript
+createElement('style', null, 'pre {color: navy; background-color: lightgray}')
+/**
+ * Output:
+ * <style>pre {color: navy; background-color: lightgray}</style>
+ */
+```
+
+But you can also create the same element using `css` helper and pass there an object with selectors and CSS declarations:
+
+```javascript
+const styles = {
+    pre: {
+        color: 'navy',
+        backgroundColor: 'lightgray'
+    }
+}
+
+css(styles)
+/**
+ * Output:
+ * <style>pre {color: navy; background-color: lightgray}</style>
+ */
+```
+
 ### Tags
 
 All HTML5 tags shortcuts are prepared in the `tags.js` file.
