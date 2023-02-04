@@ -1,4 +1,4 @@
-﻿// import createElement, * as factory from '../index.js'
+// import createElement, * as factory from '../index.js'
 // const {a, br, button, div, hr, ul, li, span, form, fragment, option, pre, select, text, textarea} = factory
 
 import createElement, * as factory from 'https://unpkg.com/dom-element-factory'
@@ -20,7 +20,69 @@ const codeSamples = {
         createElement('a', {href: 'google.com'}, 'Click me'),
         'Inner text',
         createElement('h1', null, 'OK')
-    ])`
+    ])`,
+    loginForm: `const generateForm = (id, formData) =>
+        form(
+            { id, class: 'form' },
+            div(
+                { class: 'min-width' },
+                formData.map((field) =>
+                    label(null, [field.label ?? field.placeholder, input(field)])
+                )
+            )
+        )
+
+    const serialize = (formElement) =>
+        Object.fromEntries(
+            Array.from(
+                formElement.querySelectorAll('input'),
+                (input) => input.name && [input.name, input.value]
+            ).filter(Boolean)
+        )
+
+    const loginForm = generateForm('loginForm', [
+        {
+            type: 'input',
+            name: 'login',
+            label: 'Login',
+            placeholder: 'user@domain.tld',
+        },
+        { type: 'password', name: 'password', placeholder: 'Password' },
+        {
+            type: 'number',
+            name: 'secure',
+            label: 'Security Code',
+            placeholder: '0000',
+            min: 1000,
+            max: 9999,
+            step: 1,
+        },
+        {
+            type: 'button',
+            value: 'Submit',
+            style: 'margin-top: 1em',
+            click: () => console.log(serialize(loginForm)),
+        },
+    ])
+
+    const styles = css({
+        '.form': {
+            display: 'flex',
+            flexFlow: 'column nowrap',
+            alignItems: 'center',
+            height: '50vh',
+            justifyContent: 'center',
+        },
+        label: { marginTop: '0.5em' },
+        '.min-width': { width: 'min-content' },
+        'input[type=number]': { width: '100%' },
+        'label:has(input[type=button])': {
+            textAlign: 'right',
+            width: '100%',
+        },
+    })
+
+    fragment(styles, loginForm)`
 }
 
 window.codeSamples = codeSamples
@@ -107,7 +169,8 @@ const REPL = component.bind('repl')((currentTab) => {
             div('col-5', [
                 select({change: setPredefined, _: 'form-select form-select-sm col-3'}, [
                     option(getArgs('createElement'), 'createElement Sample'),
-                    option(getArgs('tags'), 'Tags sample')
+                    option(getArgs('tags'), 'Tags sample'),
+                    option(getArgs('loginForm'), 'Login Form')
                 ]),
             ]),
             div('mb-2 col-md-6', [
