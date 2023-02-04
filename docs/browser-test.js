@@ -3,7 +3,7 @@
 
 import createElement, * as factory from 'https://unpkg.com/dom-element-factory'
 import {component, useState, useNamedState} from "./reandr.js"
-import codeSamples from './code-samples'
+import codeSamples from './code-samples/index.js'
 
 // make all functions be available from console
 Object.assign(window, factory, {createElement})
