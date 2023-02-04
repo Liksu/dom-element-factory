@@ -2,7 +2,8 @@
 // const {a, br, button, div, hr, ul, li, span, form, fragment, option, pre, select, text, textarea} = factory
 
 import createElement, * as factory from 'https://unpkg.com/dom-element-factory'
-import {component, useState, useNamedState} from "./reandr.js";
+import {component, useState, useNamedState} from "./reandr.js"
+import {tags, createElement, loginForm} from './code-smaples'
 
 // make all functions be available from console
 Object.assign(window, factory, {createElement})
@@ -11,78 +12,9 @@ Object.assign(window, factory, {createElement})
 
 const codeSamples = {
     _selected: 'tags',
-    tags: `fragment(
-        a({href: 'google.com'}, 'Click me'),
-        'Inner text',
-        h1(['OK'])
-    )`,
-    createElement: `createFragment([
-        createElement('a', {href: 'google.com'}, 'Click me'),
-        'Inner text',
-        createElement('h1', null, 'OK')
-    ])`,
-    loginForm: `const generateForm = (id, formData) =>
-        form(
-            { id, class: 'form' },
-            div(
-                { class: 'min-width' },
-                formData.map((field) =>
-                    label(null, [field.label ?? field.placeholder, input(field)])
-                )
-            )
-        )
-
-    const serialize = (formElement) =>
-        Object.fromEntries(
-            Array.from(
-                formElement.querySelectorAll('input'),
-                (input) => input.name && [input.name, input.value]
-            ).filter(Boolean)
-        )
-
-    const loginForm = generateForm('loginForm', [
-        {
-            type: 'input',
-            name: 'login',
-            label: 'Login',
-            placeholder: 'user@domain.tld',
-        },
-        { type: 'password', name: 'password', placeholder: 'Password' },
-        {
-            type: 'number',
-            name: 'secure',
-            label: 'Security Code',
-            placeholder: '0000',
-            min: 1000,
-            max: 9999,
-            step: 1,
-        },
-        {
-            type: 'button',
-            value: 'Submit',
-            style: 'margin-top: 1em',
-            click: () => console.log(serialize(loginForm)),
-        },
-    ])
-
-    const styles = css({
-        '.form': {
-            display: 'flex',
-            flexFlow: 'column nowrap',
-            alignItems: 'center',
-            height: '50vh',
-            justifyContent: 'center',
-        },
-        label: { marginTop: '0.5em' },
-        '.min-width': { width: 'min-content' },
-        'input[type=number]': { width: '100%' },
-        'label:has(input[type=button])': {
-            textAlign: 'right',
-            width: '100%',
-        },
-    })
-
-    fragment(styles, loginForm)`
+    tags,
+    createElement,
+    loginForm
 }
 
 window.codeSamples = codeSamples
