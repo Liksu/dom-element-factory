@@ -1,3 +1,9 @@
-export * from './tags.js'
-export * from './createElement.js'
-export * from './login-form.js'
+import { tags } from './tags.js'
+import { createElement } from './createElement.js'
+import { loginForm } from './login-form.js'
+
+export default {
+  tags,
+  createElement,
+  loginForm,
+}
