@@ -3,19 +3,12 @@
 
 import createElement, * as factory from 'https://unpkg.com/dom-element-factory'
 import {component, useState, useNamedState} from "./reandr.js"
-import {tags, createElement, loginForm} from './code-smaples'
+import codeSamples from './code-samples'
 
 // make all functions be available from console
 Object.assign(window, factory, {createElement})
 
 /* *** */
-
-const codeSamples = {
-    _selected: 'tags',
-    tags,
-    createElement,
-    loginForm
-}
 
 window.codeSamples = codeSamples
 
