@@ -36,6 +36,10 @@ export function base(attributes) {
     return createElement('BASE', attributes)
 }
 
+export function bdi(...args) {
+    return createElement('BDI', ...args)
+}
+
 export function bdo(...args) {
     return createElement('BDO', ...args)
 }
@@ -84,6 +88,10 @@ export function command(...args) {
     return createElement('COMMAND', ...args)
 }
 
+export function data(...args) {
+    return createElement('DATA', ...args)
+}
+
 export function datalist(...args) {
     return createElement('DATALIST', ...args)
 }
@@ -102,6 +110,10 @@ export function details(...args) {
 
 export function dfn(...args) {
     return createElement('DFN', ...args)
+}
+
+export function dialog(...args) {
+    return createElement('DIALOG', ...args)
 }
 
 export function div(...args) {
@@ -176,6 +188,10 @@ export function header(...args) {
     return createElement('HEADER', ...args)
 }
 
+export function hgroup(...args) {
+    return createElement('HGROUP', ...args)
+}
+
 export function hr(attributes) {
     return createElement('HR', attributes)
 }
@@ -222,6 +238,10 @@ export function li(...args) {
 
 export function link(attributes) {
     return createElement('LINK', attributes)
+}
+
+export function main(...args) {
+    return createElement('MAIN', ...args)
 }
 
 export function map(...args) {
@@ -276,6 +296,10 @@ export function p(...args) {
     return createElement('P', ...args)
 }
 
+export function picture(...args) {
+    return createElement('PICTURE', ...args)
+}
+
 export function param(attributes) {
     return createElement('PARAM', attributes)
 }
@@ -316,12 +340,20 @@ export function script(...args) {
     return createElement('SCRIPT', ...args)
 }
 
+export function search(...args) {
+    return createElement('SEARCH', ...args)
+}
+
 export function section(...args) {
     return createElement('SECTION', ...args)
 }
 
 export function select(...args) {
     return createElement('SELECT', ...args)
+}
+
+export function slot(...args) {
+    return createElement('SLOT', ...args)
 }
 
 export function small(...args) {
@@ -348,6 +380,10 @@ export function sub(...args) {
     return createElement('SUB', ...args)
 }
 
+export function summary(...args) {
+    return createElement('SUMMARY', ...args)
+}
+
 export function sup(...args) {
     return createElement('SUP', ...args)
 }
@@ -362,6 +398,10 @@ export function tbody(...args) {
 
 export function td(...args) {
     return createElement('TD', ...args)
+}
+
+export function template(...args) {
+    return createElement('TEMPLATE', ...args)
 }
 
 export function textarea(...args) {
