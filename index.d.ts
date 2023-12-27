@@ -2,7 +2,7 @@ type Primitives = string | number | boolean | null | Text
 type ElementType = HTMLElement | DocumentFragment
 type TagName = string | null
 type GetItemFn = (element: ElementType, tagName: TagName, attributes: Attributes, children: Children | Children[]) => Attributes
-type AnyItem = Primitives | ElementType | GetItemFn
+type AnyItem = Primitives | ElementType | GetItemFn | EventListener
 type Attributes = AnyItem | Record<string, AnyItem | Record<string, AnyItem> | Array<Attributes>> | Array<Attributes>
 type Children = AnyItem
 
