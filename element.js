@@ -20,8 +20,10 @@ export function createElement(tagName = 'DIV', attributes = {}, children = [], .
     if (String(attributes) === attributes) attributes = {'class': attributes}
     if (attributes instanceof Array) {
         if (children.length) attributes = {classList: attributes}
-        else children = attributes
-        attributes = {}
+        else {
+            children = attributes
+            attributes = {}
+        }
     }
     if (attributes instanceof Element || attributes instanceof DocumentFragment) {
         children.unshift(attributes)
