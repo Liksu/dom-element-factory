@@ -62,10 +62,10 @@ export function createElement(tagName = 'DIV', attributes = {}, children = [], .
     })
 
     children
+        .flat(Infinity)
         .map(child => child instanceof Function ? child(element, tagName, attributes, children) : child)
         .filter(child => child != null && child !== false)
         .forEach(child => {
-            if (child instanceof Array) child = createElement(null, null, child)
             if (typeof child !== 'object') child = document.createTextNode(child)
             element.appendChild(child)
         })
