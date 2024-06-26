@@ -34,6 +34,7 @@ export function createElement(tagName = 'DIV', attributes = {}, children = [], .
         switch (key) {
             case '_':
             case 'class':
+            case 'className':
                 element.className = String(value)
                 break
             case 'classList':
