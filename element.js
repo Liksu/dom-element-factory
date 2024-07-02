@@ -38,6 +38,7 @@ export function createElement(tagName = 'DIV', attributes = {}, children = [], .
                 element.className = String(value)
                 break
             case 'classList':
+                if (value == null) break
                 if (!(value instanceof Array)) value = [value]
                 value = value.reduce((classes, item) => {
                     if (item instanceof Function) item = item(element, tagName, attributes, children)
