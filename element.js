@@ -41,6 +41,7 @@ export function createElement(tagName = 'DIV', attributes = {}, children = [], .
                 if (value == null) break
                 if (!(value instanceof Array)) value = [value]
                 value = value.reduce((classes, item) => {
+                    if (!item) return classes
                     if (item instanceof Function) item = item(element, tagName, attributes, children)
                     if (item instanceof Array) return classes.concat(...item.filter(item => item === 0 || !!item))
                     return classes.concat(...(typeof item === 'object'
@@ -69,7 +70,7 @@ export function createElement(tagName = 'DIV', attributes = {}, children = [], .
         .filter(child => child != null && child !== false)
         .forEach(child => {
             if (typeof child !== 'object') child = document.createTextNode(child)
-            element.appendChild(child)
+            if (child instanceof Node) element.appendChild(child)
         })
 
     if (!tagName) {

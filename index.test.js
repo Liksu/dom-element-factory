@@ -105,3 +105,23 @@ testCase('Deep fragment',
     ]),
     '<a href="google.com">Click me</a>Inner text<h1>OK</h1>'
 )
+
+testCase('Children without arguments',
+    createElement('DIV', span('class-name', 'content')),
+    '<div><span class="class-name">content</span></div>'
+)
+
+testCase('Children array, without arguments',
+    createElement('DIV', ['foo', 'bar', ['baz']]),
+    '<div>foobarbaz</div>'
+)
+
+testCase('ClassList array, with undefined children',
+    createElement('DIV', ['foo', 'bar', {baz: true}]),
+    '<div>foobar</div>'
+)
+
+testCase('ClassList array, without children',
+    createElement('DIV', ['foo', 'bar', {baz: true}], null),
+    '<div>foobar</div>'
+)
