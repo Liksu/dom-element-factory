@@ -68,6 +68,13 @@ export function caption(...args) {
     return createElement('CAPTION', ...args)
 }
 
+/**
+ * @deprecated
+ */
+export function center(...args) {
+    return createElement('CENTER', ...args)
+}
+
 export function cite(...args) {
     return createElement('CITE', ...args)
 }
@@ -154,6 +161,20 @@ export function footer(...args) {
 
 export function form(...args) {
     return createElement('FORM', ...args)
+}
+
+/**
+ * @deprecated
+ */
+export function frame(attributes) {
+    return createElement('FRAME', attributes)
+}
+
+/**
+ * @deprecated
+ */
+export function frameset(...args) {
+    return createElement('FRAMESET', ...args)
 }
 
 export function h1(...args) {
@@ -266,6 +287,20 @@ export function meter(...args) {
 
 export function nav(...args) {
     return createElement('NAV', ...args)
+}
+
+/**
+ * @deprecated
+ */
+export function nobr(...args) {
+    return createElement('NOBR', ...args)
+}
+
+/**
+ * @deprecated
+ */
+export function noframes(...args) {
+    return createElement('NOFRAMES', ...args)
 }
 
 export function noscript(...args) {

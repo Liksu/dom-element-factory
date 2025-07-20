@@ -35,6 +35,7 @@ declare module 'dom-element-factory' {
     export const button: Tag<HTMLButtonElement>
     export const canvas: Tag<HTMLCanvasElement>
     export const caption: Tag<HTMLTableCaptionElement>
+    export const center: Tag
     export const cite: Tag
     export const code: Tag
     export const col: ChildlessTag<HTMLTableColElement>
@@ -57,6 +58,8 @@ declare module 'dom-element-factory' {
     export const figure: Tag
     export const footer: Tag
     export const form: Tag<HTMLFormElement>
+    export const frame: ChildlessTag
+    export const frameset: Tag
     export const h1: Tag<HTMLHeadingElement>
     export const h2: Tag<HTMLHeadingElement>
     export const h3: Tag<HTMLHeadingElement>
@@ -85,6 +88,8 @@ declare module 'dom-element-factory' {
     export const meta: ChildlessTag<HTMLMetaElement>
     export const meter: Tag<HTMLMeterElement>
     export const nav: Tag
+    export const nobr: Tag
+    export const noframes: Tag
     export const noscript: Tag
     export const object: Tag<HTMLObjectElement>
     export const ol: Tag<HTMLOListElement>

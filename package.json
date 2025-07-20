@@ -1,6 +1,6 @@
 {
   "name": "dom-element-factory",
-  "version": "1.5.12",
+  "version": "1.5.13",
   "description": "Lightweight tool that creates DOM elements",
   "browser": "index.js",
   "main": "server.js",
