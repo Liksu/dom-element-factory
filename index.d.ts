@@ -81,7 +81,7 @@ declare module 'dom-element-factory' {
     export const main: Tag
     export const map: Tag<HTMLMapElement>
     export const mark: Tag
-    export const menu: Tag<HTMLMetaElement>
+    export const menu: Tag<HTMLMenuElement>
     export const meta: ChildlessTag<HTMLMetaElement>
     export const meter: Tag<HTMLMeterElement>
     export const nav: Tag
@@ -130,7 +130,7 @@ declare module 'dom-element-factory' {
     export const u: Tag
     export const ul: Tag<HTMLUListElement>
     export const variable: Tag
-    export const video: Tag
-    export const wbr: ChildlessTag<HTMLVideoElement>
+    export const video: Tag<HTMLVideoElement>
+    export const wbr: ChildlessTag
     export const text: (text: string) => DocumentFragment
 }
