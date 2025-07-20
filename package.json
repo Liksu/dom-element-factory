@@ -1,9 +1,9 @@
 {
   "name": "dom-element-factory",
-  "version": "1.5.14",
+  "version": "1.5.15",
   "description": "Lightweight tool that creates DOM elements",
   "browser": "index.js",
-  "unkpg": "index.js",
+  "unpkg": "index.js",
   "main": "server.js",
   "type": "module",
   "types": "index.d.ts",
