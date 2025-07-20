@@ -1,8 +1,9 @@
 {
   "name": "dom-element-factory",
-  "version": "1.5.13",
+  "version": "1.5.14",
   "description": "Lightweight tool that creates DOM elements",
   "browser": "index.js",
+  "unkpg": "index.js",
   "main": "server.js",
   "type": "module",
   "types": "index.d.ts",
@@ -48,6 +49,6 @@
     }
   },
   "dependencies": {
-    "jsdom": "^19.0.0"
+    "jsdom": "^26.0.0"
   }
 }
